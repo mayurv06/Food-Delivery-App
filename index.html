@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodieExpress - Food Delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header glass">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-dot"></span>
+        FoodieExpress
+      </a>
+      <nav class="nav" id="navMenu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#cart" class="nav-link">Cart</a>
+        <a href="#orders" class="nav-link">Orders</a>
+        <a href="#profile" class="nav-link">Profile</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline" id="authActionBtn">Login</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">?</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Fast Delivery • Fresh Taste</p>
+        <h1>Hungry? Get your favorite food delivered in minutes.</h1>
+        <p class="hero-sub">Order from top-rated restaurants and track your meal in real time.</p>
+        <div class="hero-cta">
+          <a href="#menu" class="btn btn-primary">Order Now</a>
+          <a href="#profile" class="btn btn-outline light">View Profile</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-filter-section" id="menu">
+      <div class="container">
+        <div class="section-head">
+          <h2>Explore Menu</h2>
+          <p>Search and filter dishes by category.</p>
+        </div>
+
+        <div class="search-row">
+          <input type="text" id="searchInput" placeholder="Search for pizza, burger, biryani..." />
+        </div>
+
+        <div class="categories" id="categoryFilters">
+          <button class="category-chip active" data-category="All">All</button>
+          <button class="category-chip" data-category="Pizza">Pizza</button>
+          <button class="category-chip" data-category="Burgers">Burgers</button>
+          <button class="category-chip" data-category="Indian">Indian</button>
+          <button class="category-chip" data-category="Chinese">Chinese</button>
+          <button class="category-chip" data-category="Desserts">Desserts</button>
+          <button class="category-chip" data-category="Drinks">Drinks</button>
+        </div>
+
+        <div class="food-grid" id="foodGrid"></div>
+      </div>
+    </section>
+
+    <section class="cart-section" id="cart">
+      <div class="container">
+        <div class="section-head">
+          <h2>Your Cart</h2>
+          <p>Adjust quantities, remove items, and checkout.</p>
+        </div>
+
+        <div class="cart-layout">
+          <div class="cart-items" id="cartItems"></div>
+          <aside class="cart-summary card">
+            <h3>Bill Summary</h3>
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <strong id="subtotalValue">$0.00</strong>
+            </div>
+            <div class="summary-row">
+              <span>Delivery Fee</span>
+              <strong id="deliveryFeeValue">$2.99</strong>
+            </div>
+            <div class="summary-row total-row">
+              <span>Total</span>
+              <strong id="totalValue">$0.00</strong>
+            </div>
+            <button class="btn btn-primary full" id="checkoutBtn">Proceed to Checkout</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="orders-section" id="orders">
+      <div class="container">
+        <div class="section-head">
+          <h2>Recent Orders</h2>
+          <p>Your latest placed orders appear here.</p>
+        </div>
+        <div id="ordersList" class="orders-list"></div>
+      </div>
+    </section>
+
+    <section class="profile-section" id="profile">
+      <div class="container">
+        <div class="section-head">
+          <h2>Profile</h2>
+          <p>Manage your account details.</p>
+        </div>
+        <div class="profile-card card" id="profileCard"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal-backdrop" id="closeModalBackdrop"></div>
+    <div class="modal-content card">
+      <button class="modal-close" id="closeModalBtn" aria-label="Close">×</button>
+      <h3>Checkout</h3>
+      <form id="checkoutForm" class="checkout-form">
+        <label>
+          Full Address
+          <textarea id="addressInput" required placeholder="House no, street, city, zipcode"></textarea>
+        </label>
+
+        <fieldset class="payment-options">
+          <legend>Payment Method</legend>
+          <label><input type="radio" name="payment" value="COD" checked /> Cash on Delivery</label>
+          <label><input type="radio" name="payment" value="UPI" /> UPI</label>
+          <label><input type="radio" name="payment" value="Card" /> Card</label>
+        </fieldset>
+
+        <div class="order-summary" id="checkoutSummary"></div>
+        <button type="submit" class="btn btn-primary full">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

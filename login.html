@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - FoodieExpress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="auth-page">
+    <div class="auth-overlay"></div>
+    <div class="auth-card card">
+      <a href="index.html" class="logo auth-logo"><span class="logo-dot"></span>FoodieExpress</a>
+      <h1>Welcome Back</h1>
+      <p class="auth-sub">Login to continue ordering your favorite meals.</p>
+
+      <form id="loginForm" class="auth-form" novalidate>
+        <label>
+          Email
+          <input type="email" id="loginEmail" placeholder="you@example.com" required />
+          <small class="error" id="loginEmailError"></small>
+        </label>
+
+        <label>
+          Password
+          <input type="password" id="loginPassword" placeholder="Enter password" minlength="6" required />
+          <small class="error" id="loginPasswordError"></small>
+        </label>
+
+        <div class="auth-meta">
+          <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary full">Login</button>
+      </form>
+
+      <p class="auth-switch">New user? <a href="signup.html">Create account</a></p>
+    </div>
+  </section>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup - FoodieExpress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="auth-page signup-bg">
+    <div class="auth-overlay"></div>
+    <div class="auth-card card">
+      <a href="index.html" class="logo auth-logo"><span class="logo-dot"></span>FoodieExpress</a>
+      <h1>Create Account</h1>
+      <p class="auth-sub">Sign up and start ordering delicious food.</p>
+
+      <form id="signupForm" class="auth-form" novalidate>
+        <label>
+          Full Name
+          <input type="text" id="signupName" placeholder="John Doe" required />
+          <small class="error" id="signupNameError"></small>
+        </label>
+
+        <label>
+          Email
+          <input type="email" id="signupEmail" placeholder="you@example.com" required />
+          <small class="error" id="signupEmailError"></small>
+        </label>
+
+        <label>
+          Password
+          <input type="password" id="signupPassword" placeholder="Min 6 characters" minlength="6" required />
+          <small class="error" id="signupPasswordError"></small>
+        </label>
+
+        <label>
+          Confirm Password
+          <input type="password" id="signupConfirmPassword" placeholder="Re-enter password" minlength="6" required />
+          <small class="error" id="signupConfirmPasswordError"></small>
+        </label>
+
+        <button type="submit" class="btn btn-primary full">Create Account</button>
+      </form>
+
+      <p class="auth-switch">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </section>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
